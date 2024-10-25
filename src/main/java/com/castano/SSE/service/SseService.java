@@ -24,7 +24,7 @@ public class SseService {
     public void sendEvents(){
         for(SseEmitter emitter : emitters){
             try{
-                emitter.send(System.currentTimeMillis()); //envia tiempo actual a cada cliente suscrito
+                emitter.send(System.currentTimeMillis()); //envia tiempo 
             }catch(IOException e){
                 emitter.complete();
                 emitters.remove(emitter);
